@@ -56,6 +56,7 @@ bevy = { version = "0.12", default-features = false, features = [
 ] }
 bevy_kira_audio = { version = "0.18" }
 bevy_asset_loader = { version = "0.18" }
+bevy_xpbd_2d = "0.3.2"
 rand = { version = "0.8.3" }
 webbrowser = { version = "0.8", features = ["hardened"] }
 

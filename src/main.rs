@@ -2,7 +2,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use bevy::prelude::*;
-use bevy::window::PrimaryWindow;
+use bevy::window::{PrimaryWindow, WindowResolution};
 use bevy::winit::WinitWindows;
 use bevy::DefaultPlugins;
 use bevy_game::GamePlugin; // ToDo: Replace bevy_game with your new crate name.
@@ -15,6 +15,7 @@ fn main() {
         .insert_resource(ClearColor(Color::rgb(0.4, 0.4, 0.4)))
         .add_plugins(DefaultPlugins.set(WindowPlugin {
             primary_window: Some(Window {
+                resolution: WindowResolution::new(640., 360.),
                 title: "Bevy game".to_string(), // ToDo
                 // Bind to canvas included in `index.html`
                 canvas: Some("#bevy".to_owned()),

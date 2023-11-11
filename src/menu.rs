@@ -194,6 +194,7 @@ fn click_play_button(
         (Changed<Interaction>, With<Button>),
     >,
 ) {
+    next_state.set(GameState::Playing);
     for (interaction, mut color, button_colors, change_state, open_link) in &mut interaction_query {
         match *interaction {
             Interaction::Pressed => {
