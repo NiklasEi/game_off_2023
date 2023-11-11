@@ -1,12 +1,14 @@
 use crate::GameState;
 use bevy::prelude::*;
-use bevy_xpbd_2d::prelude::{Collider, RigidBody};
+use bevy_xpbd_2d::math::Vector;
+use bevy_xpbd_2d::prelude::*;
 
 pub struct MapPlugin;
 
 impl Plugin for MapPlugin {
     fn build(&self, app: &mut App) {
-        app.add_systems(OnEnter(GameState::Playing), spawn_map);
+        app.add_systems(OnEnter(GameState::Playing), spawn_map)
+            .insert_resource(Gravity(Vector::NEG_Y * 500.0));
     }
 }
 
